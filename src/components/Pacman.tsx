@@ -51,7 +51,7 @@ export function Pacman(props: PacmanProps) {
         <div>
             <div
                 className={clsx(
-                    props.size === "lg" ? "w-20 h-20" : "w-10 h-10",
+                    props.size === "lg" ? "w-20 h-20" : "w-12 h-12",
                     " rounded-full bg-yellow-400 relative"
                 )}
                 style={{ marginTop: "20px", overflow: "hidden" }}
@@ -63,7 +63,7 @@ export function Pacman(props: PacmanProps) {
                 ></div>
                 <div
                     ref={mouthRef}
-                    className="absolute w-full h-full bg-black"
+                    className="absolute w-full h-full bg-slate-700"
                 ></div>
             </div>
         </div>
@@ -100,7 +100,7 @@ export function ReversePacman(props: PacmanProps) {
         <div>
             <div
                 className={clsx(
-                    props.size === "lg" ? "w-20 h-20" : "w-10 h-10",
+                    props.size === "lg" ? "w-20 h-20" : "w-12 h-12",
                     " rounded-full bg-yellow-400 relative"
                 )}
                 style={{ marginTop: "20px", overflow: "hidden" }}
@@ -112,7 +112,7 @@ export function ReversePacman(props: PacmanProps) {
                 ></div>
                 <div
                     ref={mouthRef}
-                    className="absolute w-full h-full bg-black"
+                    className="absolute w-full h-full bg-slate-700"
                 ></div>
             </div>
         </div>

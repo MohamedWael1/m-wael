@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { Pacman, ReversePacman } from "./Pacman";
 import { gsap } from "gsap";
 import Image from "next/image";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 const techs = [
     {
@@ -14,7 +15,7 @@ const techs = [
     },
     {
         name: "Node.js",
-        logo: "/imgs/node-logo.png",
+        logo: "/imgs/node-js-logo.png",
     },
     {
         name: "React",
@@ -22,7 +23,7 @@ const techs = [
     },
     {
         name: "Next.js",
-        logo: "/imgs/next-logo.png",
+        logo: "/imgs/nextjs-logo.png",
     },
     {
         name: "Express.js",
@@ -35,7 +36,7 @@ const techs = [
 
     {
         name: "Prisma",
-        logo: "/imgs/prisma-logo.png",
+        logo: "/imgs/prisma.png",
     },
     {
         name: "PlanetScale",
@@ -70,9 +71,14 @@ export default function TechStack() {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        gsap.timeline()
+        gsap.registerPlugin(ScrollTrigger)
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: ref.current,
+            }
+        })
             .set(techStackLogos.current, {
-                y: -30,
+                y: -32,
             })
             .set(ref.current, {
                 x: 0,
@@ -372,7 +378,7 @@ export default function TechStack() {
     }, []);
 
     return (
-        <div className="min-h-[300px] mx-4 p-2">
+        <div className="h-screen mx-4 p-2">
             <h1 className="text-center text-2xl font-bold text-primary mb-10">
                 Skills & Tools
             </h1>
@@ -385,7 +391,7 @@ export default function TechStack() {
             </div>
 
             <div
-                className="grid text-primary text-center text-xs place-items-center  gap-1 relative"
+                className="grid text-primary text-center  place-items-center text-[14px]  gap-2 relative"
                 style={{
                     gridTemplateColumns:
                         "repeat(auto-fill, minmax(100px, 1fr))",
@@ -410,8 +416,8 @@ export default function TechStack() {
                         >
                             <Image
                                 src={tech.logo}
-                                height={30}
-                                width={30}
+                                height={38}
+                                width={38}
                                 alt={tech.name}
                                 className="rounded-full"
                             />

@@ -4,8 +4,9 @@
 
 body {
     margin: 0;
-    font-family: Retro Gaming;
+    font-family: Retro Gaming, sans-serif;
     background-color: #334155;
+    overflow-x: hidden;
 }
 
 :root {

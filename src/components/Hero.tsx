@@ -23,9 +23,9 @@ function Hero() {
                 y: 0,
                 duration: 5,
             });
+
             gsap.to(ref.current.ghost, {
                 x: -1000,
-                y: 90,
                 duration: 4,
                 delay: 4,
                 onComplete: () => {
@@ -48,7 +48,7 @@ function Hero() {
     return (
         <div className="p-4 overflow-hidden">
             <main className="text-primary w-full space-y-4">
-                <div className="text-lg md:text-4xl text-center">
+                <div className="text-3xl md:text-4xl text-center font-semibold">
                     <Typewriter
                         onInit={(typewriter) => {
                             typewriter
@@ -60,24 +60,10 @@ function Hero() {
                         }}
                     />
                 </div>
-                <div>
-                    Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                    Incidunt nihil ex eius libero, unde itaque fuga fugiat
-                    delectus impedit laudantium amet eos, et maxime dolor nam
-                    adipisci sunt? Voluptatem, illum!
-                </div>
-                <div>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                    Officiis vero ipsam sapiente dolore, atque autem ab repellat
-                    velit. Voluptas incidunt eaque eligendi quis suscipit, et
-                    praesentium molestiae nisi? Esse, vitae.
-                </div>
-
-                <div>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Magni atque quas corporis laborum iure sed eligendi,
-                    pariatur molestias dicta praesentium ullam, eius mollitia
-                    quae deserunt illo vitae ratione? Nesciunt, tempora.
+                <div className="text-center text-lg">
+                    A passionate developer who loves building things with code.
+                    I spend my time building pixel websites, learning
+                    new technologies and solving problems.
                 </div>
             </main>
             <div className="flex items-center">
