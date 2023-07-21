@@ -18,8 +18,6 @@ export default function Home() {
    
     return (
         <div className="px-4 md:p-20 select-none">
-            <Hero />
-            <TechStack />
             <Projects />
 
         </div>

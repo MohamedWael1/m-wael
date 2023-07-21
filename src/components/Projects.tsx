@@ -11,18 +11,21 @@ const Projects_INFO = [
         projectLink: "https:test-creator-v2.vercel.app",
         githubLink: "https://github.com/MohamedWael1/test-creator-v2",
         title: "Test Creator v2",
+        description: "A website that allows you to create tests and share them with your friends.",
     },
     {
         img: "/imgs/test-creator-v2.png",
         projectLink: "https:test-creator-v2.vercel.app",
         githubLink: "https://github.com/MohamedWael1/test-creator-v2",
         title: "Test Creator v2",
+        description: "A website that allows you to create tests and share them with your friends.",
     },
     {
         img: "/imgs/test-creator-v2.png",
         projectLink: "https:test-creator-v2.vercel.app",
         githubLink: "https://github.com/MohamedWael1/test-creator-v2",
         title: "Test Creator v2",
+        description: "A website that allows you to create tests and share them with your friends.",
     },
 ];
 
@@ -99,6 +102,7 @@ function Projects() {
                         githubLink={project.githubLink}
                         index={index}
                         title={project.title}
+                        description={project.description}
                     />
                 </div>
             ))}

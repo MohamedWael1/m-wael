@@ -58,12 +58,12 @@ export function Pacman(props: PacmanProps) {
             >
                 <div
                     ref={eyeRef}
-                    className="absolute w-2 h-2 rounded-full bg-gray-800"
+                    className="absolute w-2 h-2 rounded-full bg-slate-900"
                     style={{ top: "10%", right: "30%" }}
                 ></div>
                 <div
                     ref={mouthRef}
-                    className="absolute w-full h-full bg-slate-700"
+                    className="absolute w-full h-full bg-slate-900"
                 ></div>
             </div>
         </div>
@@ -107,12 +107,12 @@ export function ReversePacman(props: PacmanProps) {
             >
                 <div
                     ref={eyeRef}
-                    className="absolute w-2 h-2 rounded-full bg-gray-800"
+                    className="absolute w-2 h-2 rounded-full bg-slate-900"
                     style={{ top: "10%", left: "30%" }}
                 ></div>
                 <div
                     ref={mouthRef}
-                    className="absolute w-full h-full bg-slate-700"
+                    className="absolute w-full h-full bg-slate-900"
                 ></div>
             </div>
         </div>
