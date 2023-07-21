@@ -5,10 +5,10 @@
 body {
     margin: 0;
     font-family: Retro Gaming, sans-serif;
-    background-color: #334155;
+    background-color: #0f172a;
     overflow-x: hidden;
 }
 
 :root {
-    --color-primary: #ffff;
+    --color-primary: #f3f4f6;
 }

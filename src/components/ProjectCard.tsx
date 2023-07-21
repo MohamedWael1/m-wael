@@ -1,92 +1,56 @@
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { Pacman, ReversePacman } from "./Pacman";
-import { gsap } from "gsap";
 import Link from "next/link";
-
-interface Tech {
-    name: string;
-    img: string;
-}
+import { BsCodeSlash } from "react-icons/bs";
+import { LuExternalLink } from "react-icons/lu";
+import clsx from "clsx";
+import { StyleHTMLAttributes } from "react";
 
 interface ProjectCardProps {
     img: string;
+    projectLink: string;
+    githubLink: string;
+    index: number;
     title: string;
-    techs: Tech[];
-    link: string;
 }
 
 export default function ProjectCard(props: ProjectCardProps) {
-    const [isLastPosSmaller, setIsLastPosSmaller] = useState(false);
-    const [isInitialized, setIsInitialized] = useState(false);
-    const pacman = useRef<HTMLDivElement>(null);
-    const parent = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const handlePacmanMove = (e: KeyboardEvent) => {
-            const pacmanEl = pacman.current;
-
-            const tl = gsap.timeline();
-
-           props.techs.forEach((tech,i) => {
-                
-           })
-
-            switch (e.key) {
-                case "ArrowUp":
-                    if (!pacmanEl) return;
-                    if (
-                        pacmanEl?.getBoundingClientRect().top <
-                        parent.current?.getBoundingClientRect().top!
-                    )
-                        return;
-                    tl.to(pacmanEl, { y: "-=30" });
-                    break;
-                case "ArrowDown":
-                    if (!pacmanEl) return;
-                    if (
-                        pacmanEl?.getBoundingClientRect().top + 90 >
-                        parent.current?.getBoundingClientRect().height!
-                    )
-                        return;
-                    tl.to(pacmanEl, { y: "+=30" });
-                    break;
-                case "ArrowLeft":
-                    if (!pacmanEl) return;
-                    if (
-                        pacmanEl?.getBoundingClientRect().left - 30 <
-                        parent.current?.getBoundingClientRect().left!
-                    )
-                        return;
-                    setIsLastPosSmaller(true);
-                    tl.to(pacmanEl, { x: "-=30" });
-                    break;
-                case "ArrowRight":
-                    if (!pacmanEl) return;
-                    if (
-                        pacmanEl?.getBoundingClientRect().left - 250 >
-                        parent.current?.getBoundingClientRect().width!
-                    )
-                        return;
-                    setIsLastPosSmaller(false);
-                    tl.to(pacmanEl, { x: "+=30" });
-                    break;
-            }
-        };
-
-        window.addEventListener("keydown", handlePacmanMove);
-        return () => {
-            window.removeEventListener("keydown", handlePacmanMove);
-        };
-    });
-
     return (
-        <div
-            className="relative  h-[300px] w-[400px] md:w-[600px] shadow-xl rounded-sm text-primary"
-            ref={parent}
-        >
-            <div className="z-10 absolute  -translate-x-1/2 -bottom-1/3 left-1/2  w-4/5">
-                <Link href={props.link} target="_blank">
+        <div className="w-[300px] md:w-[600px]  shadow-xl rounded-md text-primary select-none border-2 border-slate-700">
+            <div
+                className={clsx(
+                    "shadow-md text-center p-3 w-3/5 mx-auto -translate-y-1/4 border-2 bg-slate-900 border-slate-700"
+                )}
+            >
+                {props.title}
+            </div>
+                <div
+                    className={clsx(
+                        props.index % 2 === 0 ? "" : "justify-end",
+                        "flex gap-4 h-[100px] p-2 md:p-6"
+                    )}
+                >
+                    <div>
+                        <Link href={props.githubLink} target="_blank">
+                            <BsCodeSlash />
+                        </Link>
+                    </div>
+                    <div>
+                        <Link href={props.projectLink} target="_blank">
+                            <LuExternalLink />
+                        </Link>
+                    </div>
+                </div>
+                
+
+            <div
+                className={clsx(
+                    props.index % 2 === 0
+                        ? "md:translate-x-3/4 md:-translate-y-1/3"
+                        : "md:-translate-x-2/4 md:-translate-y-1/3",
+                    "w-4/5 mx-auto translate-y-1/2"
+                )}
+            >
+                <Link href={props.projectLink} target="_blank">
                     <Image
                         src={props.img}
                         alt="Test Creator v2"
@@ -97,44 +61,6 @@ export default function ProjectCard(props: ProjectCardProps) {
                     />
                 </Link>
             </div>
-
-            <div className="z-10 absolute -translate-x-1/2 -top-4 left-1/2  w-3/6 h-8 rounded-md shadow-lg text-center">
-                {props.title}
-            </div>
-
-            <div
-                className="grid text-xs gap-3 p-6"
-                style={{
-                    gridTemplateColumns: "repeat(3, minmax(20px, 1fr))",
-                }}
-            >
-                {props.techs.map((tech, i) => (
-                    <div
-                        key={i}
-                        className="flex flex-col items-center justify-center"
-                    >
-                        <Image
-                            src={tech.img}
-                            alt={tech.name}
-                            draggable={false}
-                            width={20}
-                            height={20}
-                        />
-                        <span>{tech.name}</span>
-                    </div>
-                ))}
-            </div>
-
-            {
-                // isInitialized &&
-                <div ref={pacman} className="absolute">
-                    {isLastPosSmaller ? (
-                        <ReversePacman size="md" />
-                    ) : (
-                        <Pacman size="md" />
-                    )}
-                </div>
-            }
         </div>
     );
 }

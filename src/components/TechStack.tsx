@@ -31,7 +31,7 @@ const techs = [
     },
     {
         name: "TailwindCSS",
-        logo: "/imgs/tailwind-logo.png",
+        logo: "/imgs/tailwindcss-logo.svg",
     },
 
     {
@@ -40,7 +40,7 @@ const techs = [
     },
     {
         name: "PlanetScale",
-        logo: "/imgs/planetscale-logo.png",
+        logo: "/imgs/planetscale-logo.svg",
     },
     {
         name: "MySQL",
@@ -52,7 +52,7 @@ const techs = [
     },
     {
         name: "ReactQuery",
-        logo: "/imgs/react-query-logo.png",
+        logo: "/imgs/react-query-logo.svg",
     },
 ];
 
@@ -71,11 +71,11 @@ export default function TechStack() {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger)
+        gsap.registerPlugin(ScrollTrigger);
         gsap.timeline({
             scrollTrigger: {
                 trigger: ref.current,
-            }
+            },
         })
             .set(techStackLogos.current, {
                 y: -32,
@@ -378,8 +378,8 @@ export default function TechStack() {
     }, []);
 
     return (
-        <div className="h-screen mx-4 p-2">
-            <h1 className="text-center text-2xl font-bold text-primary mb-10">
+        <div className="mx-4 p-2">
+            <h1 className="text-2xl font-bold text-primary mb-10">
                 Skills & Tools
             </h1>
             <div ref={ref} className="z-10 absolute">
