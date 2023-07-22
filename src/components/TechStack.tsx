@@ -72,11 +72,12 @@ export default function TechStack() {
 
     useEffect(() => {
         gsap.registerPlugin(ScrollTrigger);
-        gsap.timeline({
+        const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ref.current,
-            },
+            }
         })
+       tl
             .set(techStackLogos.current, {
                 y: -32,
             })
@@ -373,7 +374,7 @@ export default function TechStack() {
             });
 
         return () => {
-            gsap.killTweensOf(ref.current);
+            tl.kill();
         };
     }, []);
 
@@ -391,7 +392,7 @@ export default function TechStack() {
             </div>
 
             <div
-                className="grid text-primary text-center  place-items-center text-[14px]  gap-2 relative"
+                className="grid text-primary text-center  text-[14px]  gap-2 relative"
                 style={{
                     gridTemplateColumns:
                         "repeat(auto-fill, minmax(100px, 1fr))",
