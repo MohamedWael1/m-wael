@@ -23,7 +23,7 @@ const techs = [
     },
     {
         name: "Next.js",
-        logo: "/imgs/nextjs-logo.png",
+        logo: "/imgs/next-js-logo.svg",
     },
     {
         name: "Express.js",
@@ -36,7 +36,7 @@ const techs = [
 
     {
         name: "Prisma",
-        logo: "/imgs/prisma.png",
+        logo: "/imgs/prisma.svg",
     },
     {
         name: "PlanetScale",
@@ -48,7 +48,7 @@ const techs = [
     },
     {
         name: "MongoDB",
-        logo: "/imgs/mongodb-logo.png",
+        logo: "/imgs/mongo-db-logo.png",
     },
     {
         name: "ReactQuery",
