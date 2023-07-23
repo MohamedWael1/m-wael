@@ -46,7 +46,7 @@ function Hero() {
     }, []);
 
     return (
-        <div className="p-4 overflow-hidden">
+        <div className="overflow-hidden">
             <main className="text-primary w-full space-y-4">
                 <div className="flex flex-col my-2 md:my-0 md:flex-row justify-center items-center">
                     <div className="flex-shrink-0 pb-8 md:pb-0">
@@ -55,7 +55,7 @@ function Hero() {
                             width={300}
                             height={300}
                             alt="personal-pic"
-                            className="rounded-full object-cover object-top w-[300px] h-[300px]"
+                            className="rounded-full object-cover object-top w-[250px] h-[250px] md:w-[300px] md:h-[300px]"
                             draggable={false}
                         />
                     </div>
