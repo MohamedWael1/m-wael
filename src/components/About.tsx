@@ -2,7 +2,7 @@ import Image from "next/image";
 
 function About() {
     return (
-        <div className="text-primary py-20" id="about">
+        <div className="text-primary mb-10" id="about">
             <h1 className="text-2xl font-bold text-primary mb-10">About Me</h1>
             <main className="text-lg">
                 <div className="pb-6">

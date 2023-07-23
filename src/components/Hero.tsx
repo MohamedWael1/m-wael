@@ -59,7 +59,7 @@ function Hero() {
                             draggable={false}
                         />
                     </div>
-                    <div className="max-w-2xl space-y-4 py-3 ml-10">
+                    <div className="max-w-2xl space-y-4 py-3 ml-6">
                         <div className="text-3xl md:text-4xl font-semibold">
                             <Typewriter
                                 onInit={(typewriter) => {
