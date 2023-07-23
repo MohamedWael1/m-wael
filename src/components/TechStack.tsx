@@ -405,9 +405,7 @@ export default function TechStack() {
         animate(tl);
 
         const handleResize = () => {
-            tl.kill();
-            tl.clear();
-            animate(tl);
+            tl.invalidate();
         };
         window.addEventListener("resize", handleResize);
 
