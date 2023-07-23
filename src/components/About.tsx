@@ -38,7 +38,7 @@ function About() {
                     So, you might be asking you are a vet how did you end up
                     becoming a software developer? I was very curious about
                     learning coding, specially when seeing how coders impact
-                    today's life. Going through dozens of articles about coding,
+                    today{"'"}s life. Going through dozens of articles about coding,
                     I started learning HMTL and CSS.
                 </div>
                 <div className="pb-6">
