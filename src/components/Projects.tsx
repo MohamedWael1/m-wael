@@ -29,7 +29,7 @@ const Projects_INFO = [
     },
     {
         img: "/imgs/test-creator-v2.png",
-        projectLink: "https:test-creator-v2.vercel.app",
+        projectLink: "https://test-creator-v2.vercel.app",
         githubLink: "https://github.com/MohamedWael1/test-creator-v2",
         title: "Test Creator v2",
         description:
