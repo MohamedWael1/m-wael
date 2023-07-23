@@ -414,7 +414,7 @@ export default function TechStack() {
             tl.kill();
             window.removeEventListener("resize", handleResize);
         };
-    }, []);
+    });
 
     return (
         <div id="tech-stack">
