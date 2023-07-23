@@ -4,11 +4,11 @@
 
 body {
     margin: 0;
-    font-family: Retro Gaming, sans-serif;
+    /* font-family:  sans-serif, Retro Gaming; */
     background-color: #0f172a;
     overflow-x: hidden;
 }
 
 :root {
-    --color-primary: #f3f4f6;
+    --color-primary: #d1d5db;
 }

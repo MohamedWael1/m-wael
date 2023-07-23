@@ -48,22 +48,36 @@ function Hero() {
     return (
         <div className="p-4 overflow-hidden">
             <main className="text-primary w-full space-y-4">
-                <div className="text-3xl md:text-4xl text-center font-semibold">
-                    <Typewriter
-                        onInit={(typewriter) => {
-                            typewriter
-                                .typeString("Hello there, I'm Pacman")
-                                .pauseFor(200)
-                                .deleteChars(6)
-                                .typeString("Mohamed Wael")
-                                .start();
-                        }}
-                    />
-                </div>
-                <div className="text-center text-lg">
-                    A passionate developer who loves building things with code.
-                    I spend my time building pixel websites, learning
-                    new technologies and solving problems.
+                <div className="flex flex-col my-2 md:my-0 md:flex-row justify-center items-center">
+                    <div className="flex-shrink-0 pb-8 md:pb-0">
+                        <Image
+                            src="/imgs/personal-pic.jpg"
+                            width={300}
+                            height={300}
+                            alt="personal-pic"
+                            className="rounded-full object-cover object-top w-[300px] h-[300px]"
+                            draggable={false}
+                        />
+                    </div>
+                    <div className="max-w-2xl space-y-4 py-3 ml-10">
+                        <div className="text-3xl md:text-4xl font-semibold">
+                            <Typewriter
+                                onInit={(typewriter) => {
+                                    typewriter
+                                        .typeString("Hello there, I'm Pacman")
+                                        .pauseFor(200)
+                                        .deleteChars(6)
+                                        .typeString("Mohamed Wael")
+                                        .start();
+                                }}
+                            />
+                        </div>
+                        <div className="text-lg">
+                            A passionate developer who loves building things
+                            with code. I spend my time building pixel websites,
+                            learning new technologies and solving problems.
+                        </div>
+                    </div>
                 </div>
             </main>
             <div className="flex items-center">

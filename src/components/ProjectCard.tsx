@@ -37,16 +37,16 @@ export default function ProjectCard(props: ProjectCardProps) {
                     </div>
                 </div>
 
-                <div className={clsx("px-4 text-sm ")}>{props.description}</div>
+                <div className={clsx("px-3 text-sm ")}>{props.description}</div>
 
                 <ul className="grid p-4" style={{
-                    gridTemplateColumns: "repeat(auto-fill, minmax(100px, 1fr))",
+                    gridTemplateColumns: "repeat(auto-fill, minmax(80px, 1fr))",
                 }}>
                     {props.techStack.map((tech, index) => (
                         <li
                             key={index}
                             className={clsx(
-                                "text-xs px-4 py-2",
+                                "text-xs  py-2 whitespace-nowrap",
                             )}
                         >
                             {tech}

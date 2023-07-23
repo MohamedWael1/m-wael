@@ -54,7 +54,12 @@ const techs = [
         name: "ReactQuery",
         logo: "/imgs/react-query-logo.svg",
     },
+    {
+        name: "GSAP",
+        logo: "/imgs/gsap-logo.svg",
+    }
 ];
+gsap.registerPlugin(ScrollTrigger);
 
 export default function TechStack() {
     const [isLastPosSmaller, setIsLastPosSmaller] = useState(false);
@@ -71,16 +76,15 @@ export default function TechStack() {
     const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
-        gsap.registerPlugin(ScrollTrigger);
         const tl = gsap.timeline({
             scrollTrigger: {
                 trigger: ref.current,
-            }
+            },
+        });
+
+        tl.set(techStackLogos.current, {
+            y: -32,
         })
-       tl
-            .set(techStackLogos.current, {
-                y: -32,
-            })
             .set(ref.current, {
                 x: 0,
                 y: techStack.current[0].offsetTop - 40,
@@ -370,6 +374,30 @@ export default function TechStack() {
                 ">"
             )
             .to(ref.current, {
+                x: techStack.current[12].offsetLeft - 10,
+                y: techStack.current[12].offsetTop - 40,
+                onStart: () => {
+                    comparePos(
+                        techStack.current[11].offsetLeft,
+                        techStack.current[12].offsetLeft
+                    );
+                },
+            })
+            .to(
+                techStackLogos.current[12],
+                {
+                    opacity: 0,
+                },
+                ">"
+            )
+            .to(
+                techStack.current[12],
+                {
+                    opacity: 1,
+                },
+                ">"
+            )
+            .to(ref.current, {
                 opacity: 0,
             });
 
@@ -379,7 +407,7 @@ export default function TechStack() {
     }, []);
 
     return (
-        <div className="mx-4 p-2">
+        <div id="tech-stack">
             <h1 className="text-2xl font-bold text-primary mb-10">
                 Skills & Tools
             </h1>
@@ -392,7 +420,7 @@ export default function TechStack() {
             </div>
 
             <div
-                className="grid text-primary text-center  text-[14px]  gap-2 relative"
+                className="grid text-primary text-center place-items-center  text-[14px]  gap-2 relative"
                 style={{
                     gridTemplateColumns:
                         "repeat(auto-fill, minmax(100px, 1fr))",
