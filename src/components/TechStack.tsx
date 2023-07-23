@@ -57,7 +57,7 @@ const techs = [
     {
         name: "GSAP",
         logo: "/imgs/gsap-logo.svg",
-    }
+    },
 ];
 gsap.registerPlugin(ScrollTrigger);
 
@@ -75,13 +75,7 @@ export default function TechStack() {
     const techStackLogos = useRef<HTMLImageElement[]>([]);
     const ref = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        const tl = gsap.timeline({
-            scrollTrigger: {
-                trigger: ref.current,
-            },
-        });
-
+    function animate(tl: gsap.core.Timeline) {
         tl.set(techStackLogos.current, {
             y: -32,
         })
@@ -400,9 +394,25 @@ export default function TechStack() {
             .to(ref.current, {
                 opacity: 0,
             });
+    }
+
+    useEffect(() => {
+        const tl = gsap.timeline({
+            scrollTrigger: {
+                trigger: ref.current,
+            },
+        });
+        animate(tl);
+
+        const handleResize = () => {
+            tl.clear();
+            animate(tl);
+        };
+        window.addEventListener("resize", handleResize);
 
         return () => {
             tl.kill();
+            window.removeEventListener("resize", handleResize);
         };
     }, []);
 

@@ -61,7 +61,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                     props.index % 2 === 0
                         ? "md:translate-x-3/4"
                         : "md:-translate-x-2/4",
-                    "absolute -bottom-1/3 sm:-bottom-2/3  md:-bottom-1/2  -translate-y-1/2"
+                    "absolute -bottom-[40%] xs:-bottom-1/2  md:-bottom-1/2  -translate-y-1/2"
                 )}
             >
                 <Link href={props.projectLink} target="_blank">
