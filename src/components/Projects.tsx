@@ -148,7 +148,7 @@ function Projects() {
     }, [isMobile]);
     return (
         <div ref={ref} className=" py-20" id="projects">
-            <h1 className="text-2xl font-bold text-primary mb-10">Projects</h1>
+            <h1 className="text-2xl font-bold text-primary">Projects</h1>
             {!isMobile && (
                 <div ref={pacman}>
                     {isReversed ? (

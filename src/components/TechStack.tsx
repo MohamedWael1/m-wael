@@ -430,7 +430,7 @@ export default function TechStack() {
             </div>
 
             <div
-                className="grid text-primary text-center place-items-center  text-[14px]  gap-2 relative"
+                className="grid text-primary text-center place-items-center   text-[14px]  gap-2 relative"
                 style={{
                     gridTemplateColumns:
                         "repeat(auto-fill, minmax(100px, 1fr))",
