@@ -128,7 +128,7 @@ function Footer() {
                 </strong>
             </span>
             <span className="text-sm">
-                Built with <strong>Next.js</strong> and{" "}
+                Built with <strong>Next.js</strong>,{" "}
                 <strong>TailwindCSS & GSAP</strong>
             </span>
             <span className="text-sm">
