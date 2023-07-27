@@ -12,7 +12,6 @@ function Hero() {
         let ctx = gsap.context(() => {
             gsap.to(ref.current.ghost, {
                 x: 1000,
-                y: 0,
                 duration: 4,
                 onComplete: () => {
                     setIsCompleted(true);
@@ -20,7 +19,6 @@ function Hero() {
             });
             gsap.to(ref.current.pacman, {
                 x: 1000,
-                y: 0,
                 duration: 5,
             });
 
@@ -34,7 +32,6 @@ function Hero() {
             });
             gsap.to(ref.current.pacman, {
                 x: -1000,
-                y: 90,
                 duration: 4,
                 delay: 5,
             });
