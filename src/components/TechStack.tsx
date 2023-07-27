@@ -404,16 +404,10 @@ export default function TechStack() {
         });
         animate(tl);
 
-        const handleResize = () => {
-            tl.invalidate();
-        };
-        window.addEventListener("resize", handleResize);
-
         return () => {
             tl.kill();
-            window.removeEventListener("resize", handleResize);
         };
-    },[]);
+    }, []);
 
     return (
         <div id="tech-stack">
