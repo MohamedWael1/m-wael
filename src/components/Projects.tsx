@@ -23,7 +23,7 @@ const Projects_INFO = [
             "Mongoose",
             "MongoDB",
             "Express",
-            "Joy",
+            "Joi",
             "React-Hook-Form",
         ],
     },

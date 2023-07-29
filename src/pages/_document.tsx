@@ -1,4 +1,5 @@
 import { Html, Head, Main, NextScript } from "next/document";
+import Script from "next/script";
 
 export default function Document() {
     return (
@@ -16,12 +17,24 @@ export default function Document() {
                 />
 
                 <meta property="og:title" content="Mohamed Wael" />
-                <meta property="og:description" content="Explore Mohamed Wael's impressive software developer portfolio showcasing projects, skills, and expertise in web development." />
-                <meta property="og:image" content="/imgs/website-screenshot.png" />
+                <meta
+                    property="og:description"
+                    content="Explore Mohamed Wael's impressive software developer portfolio showcasing projects, skills, and expertise in web development."
+                />
+                <meta
+                    property="og:image"
+                    content="/imgs/website-screenshot.png"
+                />
                 <meta property="og:url" content="https://m-wael.vercel.app/" />
                 <meta property="og:site_name" content="Mohamed Wael" />
-                <meta name="twitter:card" content="🚀 Welcome! I'm Mohamed, a passionate full-stack web developer with expertise in JavaScript, Typescript, React, and Node.js. Explore my projects and witness the power of intuitive, user-friendly applications. Let's build something amazing together! #webdev #portfolio" />
-                <meta name="twitter:image:alt" content="Portrait of  Mohamed Wael, software developer" />
+                <meta
+                    name="twitter:card"
+                    content="🚀 Welcome! I'm Mohamed, a passionate full-stack web developer with expertise in JavaScript, Typescript, React, and Node.js. Explore my projects and witness the power of intuitive, user-friendly applications. Let's build something amazing together! #webdev #portfolio"
+                />
+                <meta
+                    name="twitter:image:alt"
+                    content="Portrait of  Mohamed Wael, software developer"
+                />
                 <link
                     href="https://db.onlinewebfonts.com/c/4c19fc875e7ba1e6831129de3ab5ac0b?family=Retro+Gaming"
                     rel="stylesheet"
@@ -37,6 +50,17 @@ export default function Document() {
                     rel="stylesheet"
                 />
             </Head>
+            <Script
+                async
+                src="https://www.googletagmanager.com/gtag/js?id=G-1MZZMNKPYF"
+            ></Script>
+            <Script id="gtag-init" strategy="afterInteractive">
+                {` window.dataLayer = window.dataLayer || []
+                     function gtag(){dataLayer.push(arguments)}
+                     gtag('js', new Date());
+                   
+                     gtag('config', 'G-1MZZMNKPYF')`}
+            </Script>
             <body>
                 <Main />
                 <NextScript />
