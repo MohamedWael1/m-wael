@@ -20,10 +20,12 @@ export default function Document() {
                     rel="stylesheet"
                 />
                 <Script
+                    id="gtag-script"
                     async
                     src="https://www.googletagmanager.com/gtag/js?id=G-1MZZMNKPYF"
                 />
                 <Script
+                    id="gtag"
                     dangerouslySetInnerHTML={{
                         __html: ` window.dataLayer = window.dataLayer || []
                 function gtag(){dataLayer.push(arguments)}
