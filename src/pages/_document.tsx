@@ -19,12 +19,11 @@ export default function Document() {
                     href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Noto+Sans+Arabic:wght@100;200;300;400;500;700;800;900&display=swap"
                     rel="stylesheet"
                 />
-                <Script
-                    id="gtag-script"
+                <script
                     async
                     src="https://www.googletagmanager.com/gtag/js?id=G-1MZZMNKPYF"
                 />
-                <Script
+                <script
                     id="gtag"
                     dangerouslySetInnerHTML={{
                         __html: ` window.dataLayer = window.dataLayer || []
