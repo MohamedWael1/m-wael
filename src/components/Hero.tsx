@@ -4,11 +4,13 @@ import { gsap } from "gsap";
 import { Pacman, ReversePacman } from "./Pacman";
 import Typewriter from "typewriter-effect";
 
+const useIsomorphicLayoutEffect = typeof window !== "undefined" ? useLayoutEffect : useEffect;
+
 function Hero() {
     const [isCompleted, setIsCompleted] = useState(false);
     const comp = useRef();
     const ref = useRef<Record<string, HTMLDivElement>>({});
-    useLayoutEffect(() => {
+    useIsomorphicLayoutEffect(() => {
         let ctx = gsap.context(() => {
             gsap.to(ref.current.ghost, {
                 x: 1000,
